@@ -1,0 +1,133 @@
+/* Estilos generales del body */
+body {
+  font-family: 'Nunito', sans-serif;  /* Tipografía decorativa (de tipo caligráfico) */
+  background: #bdbbd1;                /* Color de fondo lila claro */
+  padding: 5px;                       /* Espaciado interno alrededor del cuerpo */
+  text-align: center;                /* Centra el texto horizontalmente */
+  overflow-x: auto;                  /* Permite hacer scroll horizontal si el contenido se desborda */
+}
+
+/* Estilo para el título principal (por ejemplo, el nombre del pensum) */
+h1 {
+  font-family: 'Chewy', cursive; /* Fuente llamativa y divertida */
+  font-size: 50px; /* Tamaño grande para destacar el título */
+  color: white; /* Color principal del texto */
+  text-align: center; /* Centrado horizontal del texto */
+
+  /* Efecto de contorno grueso y sombras múltiples para profundidad */
+  text-shadow:
+    /* Capas externas negras (contorno grueso) */
+    -3px -3px 0 #000,
+     3px -3px 0 #000,
+    -3px  3px 0 #000,
+     3px  3px 0 #000,
+    -4px  0px 0 #000,
+     4px  0px 0 #000,
+     0px -4px 0 #000,
+     0px  4px 0 #000,
+
+    /* Sombras intermedias rojas para un toque vibrante */
+    -2px -2px 0 #000000,
+     2px -2px 0 #000000,
+    -2px  2px 0 #000000,
+     2px  2px 0 #000000;
+
+  margin-top: 5px;
+  margin-bottom: 15px; /* Espacio inferior */
+}
+
+
+/* Contenedor principal de los años, con scroll horizontal si se necesita */
+.container {
+  display: flex;                    /* Usa Flexbox para alinear los elementos hijos */
+  flex-wrap: nowrap;               /* Evita que los elementos se vayan a la siguiente línea */
+  gap: 2px;                        /* Espacio entre los años */
+  overflow-x: auto;                /* Permite scroll horizontal si hay muchos años */
+  padding-bottom: 2px;            /* Espacio inferior (para evitar cortes en el scroll) */
+}
+
+/* Cada bloque de "Año" académico */
+.anio {
+  border: 2px solid #00000000;       /* Borde negro */
+  min-width: 50px;                 /* Ancho mínimo para que no se colapse */
+  flex-shrink: 0;                  /* Impide que se reduzca su tamaño en un contenedor flex */
+  padding: 1px;                    /* Espaciado interno */
+  border-radius: 10px;             /* Bordes redondeados */
+  background-color: #b3a3da00;     /* Color de fondo transparente (últimos dos dígitos 00 = alfa 0) */
+}
+
+/* Título del año */
+.anio h2 {
+  font-family: 'Satisfy', cursive;
+  background: linear-gradient(to right, #791a7c, #791a7c);
+  text-align: center;              /* Centrado del texto */
+  color: #ffffff;                  /* Texto blanco */
+  margin-bottom: 20px;             /* Espacio inferior entre el título y los semestres */
+}
+
+/* Contenedor que agrupa dos semestres por año */
+.semestres {
+  display: flex;                   /* Flexbox para alinear los semestres horizontalmente */
+  gap: 2px;                        /* Espacio entre los semestres */
+  justify-content: center;        /* Centrado dentro del año */
+}
+
+/* Estilo de cada recuadro de semestre */
+.semestre {
+  background: #8f6ccf00;  /* Fondo morado claro */
+  border: 2px solid #47056100;      /* Borde morado oscuro */
+  padding: 5px;                   /* Espacio interno */
+  width: 162px;                   /* Ancho fijo */
+  box-sizing: border-box;         /* Incluye padding y borde en el ancho */
+  flex-shrink: 0;                 /* Impide que el recuadro se reduzca */
+}
+
+/* Título del semestre */
+.semestre h3 {
+  margin-top: 0;                  /* Elimina margen superior */
+  font-size: 17px;                /* Tamaño del texto del semestre */
+  color: #3a005c;                 /* Texto blanco */
+  margin-bottom: 15px;            /* Espacio debajo del título */
+}
+
+/* Cada materia individual dentro del semestre */
+.materia {
+  margin: 5px auto;               /* Margen vertical de 5px y centrado horizontal */
+  padding: 8px;                   /* Espacio interno alrededor del texto */
+  width: 100%;                    /* Ocupa todo el ancho del semestre */
+  background-color: #5c5694;      /* Color lila claro */
+  border-radius: 20px;            /* Bordes redondeados */
+  cursor: pointer;                /* Cambia a mano al pasar el mouse */
+  transition: 0.3s;               /* Transición suave al hacer hover */
+  font-weight: bold;             /* Texto en negrita */
+  text-align: center;            /* Centrado horizontal del texto */
+  display: flex;                 /* Flexbox para alinear contenido */
+  align-items: center;          /* Centrado vertical del texto */
+  justify-content: center;      /* Centrado horizontal del contenido */
+  min-height: 35px;             /* Altura mínima para uniformidad entre materias */
+  font-size: 13px;              /* Tamaño pequeño de letra */
+  box-sizing: border-box;       /* Padding y borde se cuentan dentro del ancho */
+}
+
+/* Efecto al pasar el mouse por encima de una materia */
+.materia:hover {
+  background-color: #b2cbec;      /* Color de fondo azul claro al hacer hover */
+}
+
+/* Estilo para materias aprobadas */
+.materia.aprobada {
+  text-decoration: line-through;  /* Tacha el texto */
+  background-color: #b2cbec;      /* Fondo verde claro */
+  color: #000000;                    /* Texto gris medio */
+}
+
+/* Estilo para materias bloqueadas (no disponibles aún) */
+.materia.bloqueada {
+  background-color: #f0f0f0;      /* Fondo gris claro */
+  color: #aaa;                    /* Texto gris claro */
+  cursor: not-allowed;           /* Cursor de prohibido */
+}
+
+
+
+
